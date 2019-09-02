@@ -1,0 +1,54 @@
+<div class="mainContainer">
+  <div class="retroContainer">
+    <div class="flex-container">
+      <div [@listAnimation]="wentWell.length" class="flex-containerColumn">
+        <div class='retroTypeHeading'><strong> What went well </strong></div>
+        <div  class="retroPoint well" *ngFor='let item of wentWell'>
+          {{item.text}}
+          <!-- <div class="voteContainer">
+            <div class="vote" title="Click to vote up this comment"></div>
+            <div class="voteDown" title="Click to vote down this comment"></div>
+          </div> -->
+        </div>
+        <span (click)="addItem(this.retroType.well)"> + Add another comment...</span>
+        <div [@fadeInOut]='textEditorForWell' class="wentWellTextArea" *ngIf='textEditorForWell'>
+          <textarea class="border-1 textEditor" cols="50" rows="2" [(ngModel)]='textAreaValue'
+            placeholder='Add new retro points.' #textEditor (keyup.enter)='onTextEnter(textEditor.value)'>
+              </textarea>
+          <button class="AddTextEditor" (click)='onTextEnter(textEditor.value)'>Add</button>
+          <button class="closeTextEditor" (click)='toggle()'>Cancel</button>
+        </div>
+      </div>
+      <div  [@listAnimation]="wentWrong.length"  class="flex-containerColumn">
+        <div class='retroTypeHeading'><strong> What didn't go well</strong></div>
+        <div class="retroPoint wrong" *ngFor='let item of wentWrong'>
+          {{item.text}}
+        </div>
+        <span (click)="addItem(this.retroType.wrong)"> + Add another comment...</span>
+        <div [@fadeInOut]='textEditorForWrong' class="wentWellTextArea" *ngIf='textEditorForWrong'>
+          <textarea class="border-1 textEditor" cols="50" rows="2" [(ngModel)]='textAreaValue'
+            placeholder='Add new retro points.' #textEditor (keyup.enter)='onTextEnter(textEditor.value)'>
+              </textarea>
+          <button class="AddTextEditor" (click)='onTextEnter(textEditor.value)'>Add</button>
+          <button class="closeTextEditor" (click)='toggle()'>Cancel</button>
+        </div>
+      </div>
+      <div  [@listAnimation]="wentWell.length"  class="flex-containerColumn">
+        <div class='retroTypeHeading'><strong> Action Items</strong></div>
+        <div class="retroPoint action" *ngFor='let item of actionTaken'>
+          {{item.text}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div [@shrinkOut]='textEditorEnable' class="flex-container textAreaContainer" *ngIf='textEditorEnable'>
+    <label class=""><strong>Retro Comment: </strong> </label>
+    <textarea class="border-1 textEditor" cols="97" rows="9" [(ngModel)]='textAreaValue'
+      placeholder='Add new retro points.' #textEditor (keyup.enter)='onTextEnter(textEditor.value)'>
+  </textarea>
+    <button class="AddTextEditor" (click)='onTextEnter(textEditor.value)'>Add</button>
+    <button class="closeTextEditor" (click)='toggle()'>Close</button>
+  </div>
+  <div class="black_overlay" *ngIf='textEditorEnable' (click)='toggle()'></div> -->
+</div>

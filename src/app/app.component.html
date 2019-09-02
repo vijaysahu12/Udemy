@@ -1,0 +1,22 @@
+<div class="">
+
+    <div class="header">
+      <div class="flex-left">
+        <button (click)="openNav()" class="btnNavigation">
+            <span style="font-weight: bolder;" [innerHTML]="sideMenuOpenCloseIcon"></span>
+        </button>
+      </div>
+      <div class="flex-right">
+          Welcome: {{loggedInUserDetail}}!
+      </div>    
+    </div>
+    <div class="progressBarContainer">
+      <span class="progressSpan"></span>
+    </div>
+    <div class="AppContainer">
+            <app-side-menu class="sideMenu" [@SlideBarMenu]="menuState"></app-side-menu>
+            <div class="AppBody">
+              <router-outlet (pageNameChangeEvent)="GetPageName($event)" ></router-outlet>
+          </div>
+        </div>
+    </div>

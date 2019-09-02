@@ -1,0 +1,77 @@
+
+<!-- <app-loading-spinner [(isLoading)]></app-loading-spinner> -->
+
+<div [@openClose]= "isOpen ? 'open' : 'close'" class="pageHeadding">
+    home works!
+</div>
+<hr/>
+
+<div>
+    <table>
+        <thead>
+          <tr>
+            <th>Employee Name</th>
+            <th>Project</th>
+            <th>Shift</th>
+            <th>Skills</th>
+            <th>Primary Skills</th>
+          </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let item of listOfEmployee; let i=index'>
+            <td>{{item.Name}}</td>
+            <td>{{item.Project}}</td>
+            <td><select><option value="-1">Select</option></select></td>
+            <td>{{item.Skills}}</td>
+            <td>{{item.PrimarySkills}}</td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+<hr/>
+<div class="">
+  <p>
+    <button class="btn btn-small btn-primary" (click)="isAlertBoxVisible=!isAlertBoxVisible" >Show/Hide from parent component</button> </p>
+
+    <app-alert 
+    [alertBoxMessage] ="alertBoxMessage"
+    [alertBoxType] = 'alertBoxType'
+    [isAlertBoxVisible] = 'isAlertBoxVisible' > 
+    </app-alert>
+</div>
+
+<hr/>
+
+<form class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <input class="form-control" placeholder="yyyy-mm-dd"
+               name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+        </div>
+      </div>
+    </div>
+  </form>
+  
+
+  <hr/>
+
+  <div class='col-lg-4'>
+
+      <ng-select
+          #select
+          placeholder	='Select Weekly-Off'
+          [items]="options"
+          [multiple]="true"
+          maxSelectedItems = 2
+          bindLabel="name"
+          [selectableGroup]="true"
+          [closeOnSelect]="false"
+          bindValue="id"
+          [(ngModel)]="CitiesSelected">
+          <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+              <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected"/> {{item.name}}
+          </ng-template>
+      </ng-select>
+</div>

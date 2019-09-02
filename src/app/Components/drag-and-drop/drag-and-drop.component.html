@@ -1,0 +1,25 @@
+<p>drag-and-drop works!</p>
+
+<div class="tableContainer">
+
+<table class="vjTable"> 
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Father Name</td>
+            <td>Mother Name</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of EmployeeList">
+            <td (mouseover)="hover=true" (mouseleave)="hover=false">{{i.Name}}</td>
+            <td (mouseover)="hover=true" (mouseleave)="hover=false">{{i.FatherName}}</td>
+            <td (mouseover)="hover=true" (mouseleave)="hover=false">{{i.MotherName}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div >
+        <span [ngStyle]="{backgroundColor: hover==true  ? 'lightgrey' : 'grey' }">hello {{ hover }}</span>
+</div>
+</div>

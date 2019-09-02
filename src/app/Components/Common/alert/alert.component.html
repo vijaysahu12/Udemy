@@ -1,0 +1,10 @@
+<!-- <p *ngFor="let alert of alerts">
+  <ngb-alert [type]="alert.type" (close)="close(alert)">{{ alert.message }}</ngb-alert>
+</p>
+<p>
+  <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
+</p> -->
+<ngb-alert *ngIf='isAlertBoxVisible' [type]="alertBoxType" (close)="close()">{{alertBoxMessage}} </ngb-alert>
+
+
+ 

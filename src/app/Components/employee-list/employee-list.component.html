@@ -1,0 +1,22 @@
+<div>
+        <table>
+            <thead>
+              <tr>
+                <th>Employee Name</th>
+                <th>Project</th>
+                <th>Shift Time</th>
+                <th>Skills</th>
+                <th>Primary Skills</th>
+              </tr>
+        </thead>
+        <tbody [@AnimateLeftToRight]='EmployeeListModel.length'>
+            <tr *ngFor='let item of EmployeeListModel; let i=index'>
+                <td>{{item.EmployeeName}}</td>
+                <td>{{item.ProjectName}}</td>
+                <td><select><option value="-1">Select</option></select></td>
+                <td>{{item.PrimarySkills}}</td>
+                <td>{{item.SecondarySkills}}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>

@@ -1,0 +1,42 @@
+table{
+    width: 100%;
+    height: 100%;
+  
+}
+
+table tbody{
+    cursor: pointer;
+}
+
+table td{
+    width: inherit;
+}
+
+
+
+
+table td, table th {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+table  tr:hover {
+    background-color: #ddd;
+}
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+
+select{
+    width: inherit;
+    height: inherit;
+    display: block;
+}

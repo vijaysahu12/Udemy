@@ -1,0 +1,4 @@
+.card-deck .card{
+    flex-basis: 18%;
+    max-width: 18%;
+}

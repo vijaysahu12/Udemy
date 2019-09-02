@@ -1,0 +1,27 @@
+ol{
+    width: inherit;
+    height: inherit;
+    line-height: 1.9;
+    text-decoration-style: none;
+}
+
+
+
+ol li {
+    opacity: 0;
+    transform: rotateX(vijayli);
+    transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+    opacity: 1;
+    letter-spacing: 1px;
+    color: #207020;
+  }
+
+
+  @keyframes vijayli{
+      0%   { transform:  rotateX(-0deg) }  
+      15%  { transform:  rotateX(-15deg) }  
+      30%  { transform:  rotateX(-30deg) }  
+      45%  { transform:  rotateX(-45deg) }  
+      75%  { transform:  rotateX(-75deg) }  
+      100% { transform:  rotateX(-100deg); opacity: 1; }  
+  }
