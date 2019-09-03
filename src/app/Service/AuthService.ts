@@ -17,8 +17,6 @@ export class AuthService{
     }
 
     signUp(param: string| number ) {
-
-
         return 'Vijay Sahu';
     }
     getLoggedInUser() {

@@ -4,11 +4,7 @@
       <div [@listAnimation]="wentWell.length" class="flex-containerColumn">
         <div class='retroTypeHeading'><strong> What went well </strong></div>
         <div  class="retroPoint well" *ngFor='let item of wentWell'>
-          {{item.text}}
-          <!-- <div class="voteContainer">
-            <div class="vote" title="Click to vote up this comment"></div>
-            <div class="voteDown" title="Click to vote down this comment"></div>
-          </div> -->
+          {{item.Message}}
         </div>
         <span (click)="addItem(this.retroType.well)"> + Add another comment...</span>
         <div [@fadeInOut]='textEditorForWell' class="wentWellTextArea" *ngIf='textEditorForWell'>
@@ -22,21 +18,21 @@
       <div  [@listAnimation]="wentWrong.length"  class="flex-containerColumn">
         <div class='retroTypeHeading'><strong> What didn't go well</strong></div>
         <div class="retroPoint wrong" *ngFor='let item of wentWrong'>
-          {{item.text}}
+          {{item.Message}}
         </div>
         <span (click)="addItem(this.retroType.wrong)"> + Add another comment...</span>
         <div [@fadeInOut]='textEditorForWrong' class="wentWellTextArea" *ngIf='textEditorForWrong'>
           <textarea class="border-1 textEditor" cols="50" rows="2" [(ngModel)]='textAreaValue'
             placeholder='Add new retro points.' #textEditor (keyup.enter)='onTextEnter(textEditor.value)'>
               </textarea>
-          <button class="AddTextEditor" (click)='onTextEnter(textEditor.value)'>Add</button>
+          <button class="AddTextEditor " (click)='onTextEnter(textEditor.value)'>Add</button>
           <button class="closeTextEditor" (click)='toggle()'>Cancel</button>
         </div>
       </div>
       <div  [@listAnimation]="wentWell.length"  class="flex-containerColumn">
         <div class='retroTypeHeading'><strong> Action Items</strong></div>
         <div class="retroPoint action" *ngFor='let item of actionTaken'>
-          {{item.text}}
+          {{item.Message}}
         </div>
       </div>
     </div>
