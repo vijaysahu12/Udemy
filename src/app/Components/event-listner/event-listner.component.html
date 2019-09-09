@@ -1,0 +1,27 @@
+
+<div class="tableContainer">
+<table class="vjTable">
+  <thead>
+    <tr>
+      <th>Employee Name</th>
+      <th *ngFor='let item of Days'>{{item.RosterDayName}}</th>
+    </tr>
+  </thead>
+  <tbody #myDiv>
+    <tr *ngFor="let emp of Employees">
+      <td class='' (mouseover)="hover=true" (mouseleave)="hover=false">
+        <div class=''>
+            <input type="checkbox">
+            <img src="{{emp.ProfileImage}}" /> 
+            {{emp.EmployeeName}}
+        </div>
+      </td>
+      <td *ngFor='let i of emp.Days' class='tddragable delete' (mouseover)="hover=true" (mouseleave)="hover=false">
+        <div class='tddragable delete' [style.background]='i.ShiftColor'>
+          {{i.ShiftTime}}</div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RetrospectiveModel, RetroType, RetrospectiveDbModel } from 'src/app/Modals/Retrospective.model';
 import { trigger, state, style, transition, animate, query, stagger, keyframes } from '@angular/animations';
 import { RetrospectiveService } from 'src/app/Service/retrospective.service';
-import { interval } from 'rxjs';
+import { DropEvent } from 'src/app/Events/DropEvent';
+
 
 @Component({
   selector: 'app-retrospective',
@@ -152,6 +153,11 @@ export class RetrospectiveComponent implements OnInit {
 
   DeleteComment() {
     this.retroService.DeleteRetroComment(this.retroRquestModel).subscribe(res => { console.log(res); });
+  }
+
+
+  onDropOfItem(e: DropEvent) {
+    debugger;
   }
 }
 

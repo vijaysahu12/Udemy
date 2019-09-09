@@ -3,7 +3,7 @@
     <div class="flex-container">
       <div [@listAnimation]="wentWell.length" class="flex-containerColumn">
         <div class='retroTypeHeading'><strong> What went well </strong></div>
-        <div  class="retroPoint well" *ngFor='let item of wentWell'>
+        <div draggable="true" dragClass="drag-over" dragOverClass="drag-target-border" (onDrop)="onDropOfItem($event)" class="retroPoint well" *ngFor='let item of wentWell'>
           {{item.Message}}
         </div>
         <span (click)="addItem(this.retroType.well)"> + Add another comment...</span>
@@ -31,7 +31,7 @@
       </div>
       <div  [@listAnimation]="wentWell.length"  class="flex-containerColumn">
         <div class='retroTypeHeading'><strong> Action Items</strong></div>
-        <div class="retroPoint action" *ngFor='let item of actionTaken'>
+        <div droppable class="retroPoint action" *ngFor='let item of actionTaken'>
           {{item.Message}}
         </div>
       </div>

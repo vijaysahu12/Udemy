@@ -31,43 +31,6 @@ export class EmployeeSettingComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.GetEmployees();
-  }
-
-  GetEmployees() {
-    this.EmployeeListModel.push({
-      EmployeeName: 'vijay sahu',
-      ProjectName: '',
-      Times: '',
-      PrimarySkills: '',
-      SecondarySkills: '',
-    });
-    this.EmployeeListModel.push({
-      EmployeeName: 'vijay sahu',
-      ProjectName: '',
-      Times: '',
-      PrimarySkills: '',
-      SecondarySkills: '',
-    });
-    this.EmployeeListModel.push({
-      EmployeeName: 'vijay sahu',
-      ProjectName: '',
-      Times: '',
-      PrimarySkills: '',
-      SecondarySkills: '',
-    });
-    // {
-    //   EmployeeName: 'Vijay Sahu', 
-    //   ProjectName: 'Compass', 
-    //   Time: '0000-0000', 
-    //   PrimarySkills: 'Full Stack Developer' , 
-    //   PrimarySkills : 'Full Stack Developer' 
-    // },
-// {Name: 'Susmita Sahu', Project: 'Compass', Time: '0010-0000', Skills: 'Finance', PrimarySkills : 'Full Stack Developer' },
-// {Name: 'Shilpi Sahu', Project: 'Compass', Time: '0020-0000', Skills: 'IOS', PrimarySkills : 'Full Stack Developer' },
-// {Name: 'Harinder Sahu', Project: 'Compass', Time: '0030-0000', Skills: 'ShareMarket', PrimarySkills : 'Full Stack Developer' }
-
-
   }
 }
 

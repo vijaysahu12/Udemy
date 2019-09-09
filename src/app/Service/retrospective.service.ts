@@ -32,7 +32,7 @@ export class RetrospectiveService implements OnInit {
       })
     };
 
-    console.log(retroModel.Text);
+    console.log(retroModel.Message);
     let urlis = this.url + 'Retrospective'; // this.addUrl;
     debugger;
     return this._httpClient.post<boolean>(urlis, retroModel , httpOptions );//.pipe(catchError(this.handleError));

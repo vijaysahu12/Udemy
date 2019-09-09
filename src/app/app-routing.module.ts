@@ -15,6 +15,7 @@ import { TableAnimationComponent } from './Components/table-animation/table-anim
 import { UnauthorisedComponent } from './Components/unauthorised/unauthorised.component';
 import { DragAndDropComponent } from './Components/drag-and-drop/drag-and-drop.component';
 import { RetrospectiveComponent } from './Components/retrospective/retrospective.component';
+import { EventListnerComponent } from './Components/event-listner/event-listner.component';
 
 const routes: Routes = [
   { path: 'Home', component: HomeComponent },
@@ -33,7 +34,8 @@ const routes: Routes = [
   { path: 'tableAnimation', component: TableAnimationComponent },
   { path: 'unauth', component: UnauthorisedComponent },
   { path: 'dragAndDrop', component: DragAndDropComponent },
-  { path: 'retrospective', component: RetrospectiveComponent}
+  { path: 'retrospective', component: RetrospectiveComponent},
+  { path: 'eventListner', component: EventListnerComponent}
 ];
 
 @NgModule({

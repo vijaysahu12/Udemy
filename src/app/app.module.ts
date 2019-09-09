@@ -29,6 +29,9 @@ import { TableAnimationComponent } from './Components/table-animation/table-anim
 import { UnauthorisedComponent } from './Components/unauthorised/unauthorised.component';
 import { DragAndDropComponent } from './Components/drag-and-drop/drag-and-drop.component';
 import { RetrospectiveComponent } from './Components/retrospective/retrospective.component';
+import { Draggable } from './Directives/draggable.directive';
+import { EventListnerComponent } from './Components/event-listner/event-listner.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -53,7 +56,7 @@ import { RetrospectiveComponent } from './Components/retrospective/retrospective
     UnauthorisedComponent,
     DragAndDropComponent,
     RetrospectiveComponent,
-
+    EventListnerComponent,
   ],
   imports: [
     NgbModule,
@@ -63,9 +66,12 @@ import { RetrospectiveComponent } from './Components/retrospective/retrospective
     BrowserAnimationsModule,
     HttpClientModule,
     NgSelectModule
+
   ],
   providers: [
-    AuthService
+    AuthService,
+    Draggable ,
+    DatePipe
     // {
     //   provide: HTTP_INTERCEPTORS,
     //   useClass: MyInterceptor,
