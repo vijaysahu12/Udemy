@@ -1,6 +1,4 @@
-# Angular Version
-
-Angular 8
+## Angular Version 8
 
 ## Description
 * I have earned one udemy certification on Angular
