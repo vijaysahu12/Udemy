@@ -16,8 +16,6 @@ export class EmployeeListComponent implements OnInit {
   @Input() EmployeeListModel: EmployeeList;
 
   constructor() { }
-
   ngOnInit() {
   }
-
 }

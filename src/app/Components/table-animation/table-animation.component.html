@@ -2,24 +2,57 @@
   <table class="vjTable">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Gender</th>
-        <th>Age</th>
-        <th>DateOfBirth</th>
-        <th>Birth Place</th>
-        <th>Organization</th>
-        <th>Salary</th>
+        <td>Select </td>
+        <td>FirstName</td>
+        <td>LastName</td>
+        <td>JobTitleName</td>
+        <!-- <td>preferredFullName</td> -->
+        <td>EmployeeCode</td>
+        <td>Region</td>
+        <td>PhoneNumber</td>
+        <td>EmailAddress</td>
+        <td>IsRostered</td>
+        <td>IsSelected</td>
+
       </tr>
     </thead>
     <tbody [@PopUp]='data.length'>
       <tr *ngFor="let i of data">
-        <td style='background: khaki;'> <div class="tableCell">{{i.name}}</div> </td>
-        <td style='background: rgb(136, 133, 106);'><div class="tableCell">{{i.gender}}</div></td>
-        <td style='background: rgb(134, 140, 224);'><div class="tableCell">{{i.age}}</div></td>
-        <td style='background: rgb(19, 161, 218);'><div class="tableCell">{{i.dateOfBirth}}</div></td>
-        <td style='background: rgb(32, 153, 62);'><div class="tableCell">{{i.birthPlace}}</div></td>
-        <td style='background: rgb(235, 85, 185);'><div class="tableCell">{{i.organization}}</div></td>
-        <td style='background: rgb(201, 204, 25);'><div class="tableCell">{{i.salary}}</div></td>
+        <td>
+          <div class="tableCell "><input class="checkBox" [ngStyle]="{'background':i.IsSelected === 1 ? 'green' : ''}"
+              [(ngModel)]="i.IsSelected" type="checkbox" /></div>
+        </td>
+
+        <td>
+          <div class="tableCell">{{i.firstName}}</div>
+        </td>
+
+        <td>
+          <div class="tableCell">{{i.lastName}}</div>
+        </td>
+        <td>
+          <div class="tableCell">{{i.jobTitleName}}</div>
+        </td>
+
+        <td>
+          <div class="tableCell">{{i.employeeCode}}</div>
+        </td>
+        <td>
+          <div class="tableCell">{{i.region}}</div>
+        </td>
+        <td>
+          <div class="tableCell">{{i.phoneNumber}}</div>
+        </td>
+
+        <td>
+          <div class="tableCell">{{i.emailAddress}}</div>
+        </td>
+        <td>
+          <div class="tableCell">{{i.IsRostered}}</div>
+        </td>
+        <td>
+          <div class="tableCell">{{i.IsSelected}}</div>
+        </td>
       </tr>
     </tbody>
   </table>

@@ -5,9 +5,9 @@
 <table class="vjTable"> 
     <thead>
         <tr>
-            <td>Name</td>
-            <td>Father Name</td>
-            <td>Mother Name</td>
+            <th>Name</th>
+            <th>Father Name</th>
+            <th>Mother Name</th>
         </tr>
     </thead>
     <tbody>
@@ -18,10 +18,37 @@
         </tr>
     </tbody>
 </table>
+<div style="height: 90px;"></div>
+<table class="vjTable"> 
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Father Name</th>
+            <th>Mother Name</th>
+            <th>Profession</th>
+            <th>Company</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody #tableContainer>
+        <tr *ngFor="let i of EmployeeList">
+            <td> <div class="cell" (mouseup)='MouseUp()' (mouseover)="MouseHover($event)" (mousedown)='MouseDownEvent($event)'>{{i.Name}}</div> </td>
+            <td> <div class="cell" (mouseup)='MouseUp()' (mouseover)="MouseHover($event)" (mousedown)='MouseDownEvent($event)'>{{i.FatherName}}</div> </td>
+            <td> <div class="cell" (mouseup)='MouseUp()' (mouseover)="MouseHover($event)" (mousedown)='MouseDownEvent($event)'>{{i.MotherName}}</div> </td>
+            <td> <div class="cell" (mouseup)='MouseUp()' (mouseover)="MouseHover($event)" (mousedown)='MouseDownEvent($event)'>{{i.Profession}}</div> </td>
+            <td> <div class="cell" (mouseup)='MouseUp()' (mouseover)="MouseHover($event)" (mousedown)='MouseDownEvent($event)'>{{i.Company}}</div> </td>
+            <td> <div class="cell" (mouseup)='MouseUp()' (mouseover)="MouseHover($event)" (mousedown)='MouseDownEvent($event)'>{{i.Address}}</div> </td>
+        </tr>
+    </tbody>
+</table>
 
 <div >
         <span [ngStyle]="{backgroundColor: hover==true  ? 'lightgrey' : 'grey' }">hello {{ hover }}</span>
 </div>
+</div>
+
+<div #myDiv style="width: 200px; height: 200px; background: bisque;">
+    It's div content
 </div>
 
 <br/>
