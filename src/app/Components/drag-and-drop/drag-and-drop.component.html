@@ -23,21 +23,29 @@
     <thead>
         <tr>
             <th>Name</th>
-            <th>Father Name</th>
-            <th>Mother Name</th>
-            <th>Profession</th>
-            <th>Company</th>
-            <th>Address</th>
+            <th>Employee Name</th>
+            <th>Day 1</th>
+            <th>Day 2</th>
+            <th>Day 3</th>
+            <th>Day 4</th>
+            <th>Day 5</th>
+            <th>Day 6</th>
+            <th>Day 7</th>
+            <th>Day 8</th>
         </tr>
     </thead>
     <tbody #tableContainer>
         <tr *ngFor="let i of EmployeeList">
-            <td> <div class="cell" (mouseup)='MouseUp()' (mouseover)="MouseHover($event)" (mousedown)='MouseDownEvent($event)'>{{i.Name}}</div> </td>
-            <td> <div class="cell" (mouseup)='MouseUp()' (mouseover)="MouseHover($event)" (mousedown)='MouseDownEvent($event)'>{{i.FatherName}}</div> </td>
-            <td> <div class="cell" (mouseup)='MouseUp()' (mouseover)="MouseHover($event)" (mousedown)='MouseDownEvent($event)'>{{i.MotherName}}</div> </td>
-            <td> <div class="cell" (mouseup)='MouseUp()' (mouseover)="MouseHover($event)" (mousedown)='MouseDownEvent($event)'>{{i.Profession}}</div> </td>
-            <td> <div class="cell" (mouseup)='MouseUp()' (mouseover)="MouseHover($event)" (mousedown)='MouseDownEvent($event)'>{{i.Company}}</div> </td>
-            <td> <div class="cell" (mouseup)='MouseUp()' (mouseover)="MouseHover($event)" (mousedown)='MouseDownEvent($event)'>{{i.Address}}</div> </td>
+            <td> <div class="cell">{{i.EmpId}}</div> </td>
+            <td> <div class="cell">{{i.Name}}</div> </td>
+            <td> <div class="cell" (mouseup)='MouseUp()' (mouseover)="MouseHover($event)" (mousedown)='MouseDownEvent($event)'>{{i.DayOne}}</div> </td>
+            <td> <div class="cell" (mouseup)='MouseUp()' (mouseover)="MouseHover($event)" (mousedown)='MouseDownEvent($event)'>{{i.DayTwo}}</div> </td>
+            <td> <div class="cell" (mouseup)='MouseUp()' (mouseover)="MouseHover($event)" (mousedown)='MouseDownEvent($event)'>{{i.DayThree}}</div> </td>
+            <td> <div class="cell" (mouseup)='MouseUp()' (mouseover)="MouseHover($event)" (mousedown)='MouseDownEvent($event)'>{{i.DayFour}}</div> </td>
+            <td> <div class="cell" (mouseup)='MouseUp()' (mouseover)="MouseHover($event)" (mousedown)='MouseDownEvent($event)'>{{i.DayFive}}</div> </td>
+            <td> <div class="cell" (mouseup)='MouseUp()' (mouseover)="MouseHover($event)" (mousedown)='MouseDownEvent($event)'>{{i.DaySix}}</div> </td>
+            <td> <div class="cell" (mouseup)='MouseUp()' (mouseover)="MouseHover($event)" (mousedown)='MouseDownEvent($event)'>{{i.DaySeven}}</div> </td>
+            <td> <div class="cell" (mouseup)='MouseUp()' (mouseover)="MouseHover($event)" (mousedown)='MouseDownEvent($event)'>{{i.DayEight}}</div> </td>
         </tr>
     </tbody>
 </table>

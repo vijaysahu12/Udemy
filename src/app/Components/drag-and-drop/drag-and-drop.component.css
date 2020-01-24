@@ -11,7 +11,7 @@
   width: 100%;
   padding: 4px;
   vertical-align: middle;
-  border: 1px solid black;
+  border: 1px solid #ad6060;
   align-content: center;
   border-spacing: 2px;
 }
@@ -35,7 +35,7 @@
 }
 
 .vjTable td:active {
-  background: black;
+  background: #ad6060;
   color: white;
   transform: scale(1); 
   animation: 3s ease-in-out;
@@ -73,18 +73,14 @@
 
 
 .clickedClass {
-  background: black;
+  background: #ad6060;
   color: white;
   transition: 0.3s ease-in-out; 
 }
 
 .cell{
   transition: 0.2s ease-in-out;
-}
-
-.cell:hover {
-  background: black;
-  color: white;
+  padding: 3px;
 }
 
 * {

@@ -1,9 +1,85 @@
-
-<div [@openClose]= "isOpen ? 'open' : 'close'" class="pageHeadding">
-    firebase works!
+<div [@openClose]="isOpen ? 'open' : 'close'" class="pageHeadding">
+  Kingresearch Online Class Registration
 </div>
-<hr/>
+<hr />
 
-<div>
-    <p class="pCustom">Firebase is a mobile and web application development platform developed by Firebase, Inc. in 2011, then acquired by Google in 2014. As of October 2018, the Firebase platform has 18 products, which are used by 1.5 million apps.</p>
-</div>
+
+
+<section class="row col-lg-12">
+
+  <form [formGroup]='formGroup' (ngSubmit)="onSubmit()" class="customForms">
+    <header class="header">Please fill the below details for our classes.</header>
+    <main class="main">
+      <div>
+        <input type="hidden" formControlName="$key" />
+        <label>Full Name</label>
+        <input type="text" placeholder="Full Name" name="FullName" formControlName="FullName"
+          [ngClass]="{'is-invalid': submitted && formControls.FullName.errors}" />
+
+        <div class="invalid-feedback" *ngIf="submitted && formControls.FullName.errors">
+          This field is required.
+        </div>
+      </div>
+      <div>
+        <label>Mobile</label>
+        <input type="text" placeholder="Mobile Number" name="Mobile" formControlName="Mobile"
+          [ngClass]="{'is-invalid': submitted && formControls.Mobile.errors}" />
+
+        <div class="invalid-feedback" *ngIf="submitted && formControls.Mobile.errors">
+          This field is required.
+        </div>
+      </div>
+      <div>
+        <label>Message</label>
+        <textarea cols="40" rows="7" type="text" placeholder="Comment or message" name="Location"
+          formControlName="Location" [ngClass]="{'is-invalid': submitted && formControls.Location.errors}">
+                </textarea>
+
+        <div class="invalid-feedback" *ngIf="submitted && formControls.Location.errors">
+          This field is required.
+        </div>
+      </div>
+      <div>
+        <label>Location</label>
+        <input type="text" placeholder="Your current location" name="Message" formControlName="Message"
+          [ngClass]="{'is-invalid': submitted && formControls.Message.errors}" />
+
+        <div class="invalid-feedback" *ngIf="submitted && formControls.Message.errors">
+          This field is required.
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div>
+        <input type="submit" class="btn btn-primary fullWidth" value="Submit" [disabled]="!formGroup.valid">
+      </div>
+      <div>
+        <br />
+
+        <strong>Note:</strong>
+        <p>
+          Don't worry your data will be secured and will not share to any third party.
+        </p>
+        <p>
+          This is just for records and track the customers to provide best service.
+        </p>
+
+      </div>
+    </footer>
+  </form>
+
+  <div class="alert alert-info" *ngIf='showSuccessMessage'>
+    Submitted Successfully
+  </div>
+
+  <div>
+    <table style="width: 100%;">
+      <tr *ngFor='let customer of customerArray'>
+        <td>{{customer.FullName}}</td>
+        <td>{{customer.Mobile}}</td>
+        <td>{{customer.Message}}</td>
+        <td>{{customer.Location}}</td>
+      </tr>
+    </table>
+  </div>
+</section>

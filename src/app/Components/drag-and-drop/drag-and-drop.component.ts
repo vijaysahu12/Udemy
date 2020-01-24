@@ -44,74 +44,88 @@ export class DragAndDropComponent implements OnInit , AfterViewInit {
   }
   ngOnInit() {
     this.EmployeeList.push({
+      EmpId: 1234,
       Name: 'vijay sahu',
-      FatherName: 'C.S.Sahu',
-      MotherName: 'Shrikuntala Sahu',
-      Profession: 'Full Stack Developer',
-      Company: 'Amdocs',
-      Address: 'Haridwar'
-    });
-
-    this.EmployeeList.push({
-      Name: 'Harinder sahu',
-      FatherName: 'C.S.Sahu',
-      MotherName: 'Shrikuntala Sahu',
-      Profession: 'Share Market',
-      Company: 'KingResearch',
-      Address: 'Haridwar'
-    });
-
-    this.EmployeeList.push({
-      Name: 'Ramit sahu',
-      FatherName: 'C.S.Sahu',
-      MotherName: 'Shrikuntala Sahu',
-      Profession: 'Full Stack Developer',
-      Company: 'Amdocs',
-      Address: 'Haridwar'
-    });
-
-    this.EmployeeList.push({
-      Name: 'Shilpi sahu',
-      FatherName: 'C.S.Sahu',
-      MotherName: 'Shrikuntala Sahu',
-      Profession: 'Share Market',
-      Company: 'KingResearch',
-      Address: 'Haridwar'
+      DayOne: '1000 - 0700',
+      DayTwo: '1000 - 0700',
+      DayThree: '1000 - 0700',
+      DayFour: '1000 - 0700',
+      DayFive: '1000 - 0700',
+      DaySix: '1000 - 0700',
+      DaySeven: '1000 - 0700',
+      DayEight: '1000 - 0700'
     });
     this.EmployeeList.push({
-      Name: 'vijay sahu',
-      FatherName: 'C.S.Sahu',
-      MotherName: 'Shrikuntala Sahu',
-      Profession: 'Full Stack Developer',
-      Company: 'Amdocs',
-      Address: 'Haridwar'
+      EmpId: 1234,
+      Name: 'Harinder',
+      DayOne: '1000 - 0700',
+      DayTwo: '0930 - 0630',
+      DayThree: '1000 - 0700',
+      DayFour: '0930 - 0630',
+      DayFive: '1000 - 0700',
+      DaySix: '0930 - 0630',
+      DaySeven: '1000 - 0700',
+      DayEight: '0930 - 0630'
     });
-
     this.EmployeeList.push({
-      Name: 'Harinder sahu',
-      FatherName: 'C.S.Sahu',
-      MotherName: 'Shrikuntala Sahu',
-      Profession: 'Share Market',
-      Company: 'KingResearch',
-      Address: 'Haridwar'
+      EmpId: 1234,
+      Name: 'Harinder',
+      DayOne: '1200 - 2100',
+      DayTwo: '0930 - 0630',
+      DayThree: '1000 - 0700',
+      DayFour: '1200 - 2100',
+      DayFive: '1200 - 2100',
+      DaySix: '0930 - 0630',
+      DaySeven: '1000 - 0700',
+      DayEight: '1200 - 2100'
     });
-
     this.EmployeeList.push({
-      Name: 'Ramit sahu',
-      FatherName: 'C.S.Sahu',
-      MotherName: 'Shrikuntala Sahu',
-      Profession: 'Full Stack Developer',
-      Company: 'Amdocs',
-      Address: 'Haridwar'
+      EmpId: 1234,
+      Name: 'Harinder',
+      DayOne: '1300 - 2300',
+      DayTwo: '0930 - 0630',
+      DayThree: '1000 - 0700',
+      DayFour: '1300 - 2300',
+      DayFive: '1200 - 2100',
+      DaySix: '1300 - 2300',
+      DaySeven: '1300 - 2300',
+      DayEight: '1200 - 2100'
     });
-
     this.EmployeeList.push({
-      Name: 'Shilpi sahu',
-      FatherName: 'C.S.Sahu',
-      MotherName: 'Shrikuntala Sahu',
-      Profession: 'Share Market',
-      Company: 'KingResearch',
-      Address: 'Haridwar'
+      EmpId: 1234,
+      Name: 'Harinder',
+      DayOne: '1000 - 0700',
+      DayTwo: '0930 - 0630',
+      DayThree: '1000 - 0700',
+      DayFour: '0930 - 0630',
+      DayFive: '1000 - 0700',
+      DaySix: '0930 - 0630',
+      DaySeven: '1000 - 0700',
+      DayEight: '0930 - 0630'
+    });
+    this.EmployeeList.push({
+      EmpId: 1234,
+      Name: 'Harinder',
+      DayOne: '1200 - 2100',
+      DayTwo: '0930 - 0630',
+      DayThree: '1000 - 0700',
+      DayFour: '1200 - 2100',
+      DayFive: '1200 - 2100',
+      DaySix: '0930 - 0630',
+      DaySeven: '1000 - 0700',
+      DayEight: '1200 - 2100'
+    });
+    this.EmployeeList.push({
+      EmpId: 1234,
+      Name: 'Harinder',
+      DayOne: '1300 - 2300',
+      DayTwo: '0930 - 0630',
+      DayThree: '1000 - 0700',
+      DayFour: '1300 - 2300',
+      DayFive: '1200 - 2100',
+      DaySix: '1300 - 2300',
+      DaySeven: '1300 - 2300',
+      DayEight: '1200 - 2100'
     });
   }
 
