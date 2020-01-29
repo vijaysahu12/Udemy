@@ -3,6 +3,7 @@ import { trigger, state, style, transition, animate, animateChild } from '@angul
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { currentId } from 'async_hooks';
+import { AnimateList, AnimateLeftToRight, ScaleAnimation, UpAndDown, SlideBarMenu, PopUp } from 'src/Animation/Animation';
 @Component({
   selector: 'app-firebase',
   templateUrl: './firebase.component.html',
@@ -22,14 +23,15 @@ import { currentId } from 'async_hooks';
       transition(':leave', [
         animate('1s', style({opacity : 1}))
       ])
-    ])
+    ]),
+    AnimateList, AnimateLeftToRight, ScaleAnimation, UpAndDown, SlideBarMenu, PopUp
   ]
 })
 export class FirebaseComponent implements OnInit {
 
   constructor(private firebase: AngularFireDatabase) { }
   customerList: AngularFireList<any>;
-  customerArray: [];
+  customerArray = [];
   showSuccessMessage: boolean;
   submitted: boolean;
   formGroup = new FormGroup({
@@ -52,8 +54,31 @@ export class FirebaseComponent implements OnInit {
   }
 
   GetCustomers() {
+    debugger;
     this.customerList = this.firebase.list('customers');
-    return this.customerList.snapshotChanges(); // make it observable
+    const res = this.firebase.database.ref().orderByChild('FullName').ref.once('value', items => {
+      items.forEach(x => {
+        debugger;
+      });
+    });
+ 
+
+    // this.firebase.database.ref('customers').set({
+    //   FullName: 'vijay',
+    //   Mobile: '9038293849',
+    //   Message: 'Hello Vijay Sahu',
+    //   Location: 'Pune'
+    // });
+
+    return this.customerList.snapshotChanges().subscribe(action => {
+
+     this.customerArray = action.map(item => {
+       return {
+         $key: item.key,
+         ...item.payload.val()
+       };
+     });
+    }); // make it observable
   }
 
   InsertCustomer(customer) {
@@ -64,6 +89,8 @@ export class FirebaseComponent implements OnInit {
       Location: customer.Location,
       Message: customer.Message
     });
+
+    
   }
 
   onSubmit() {

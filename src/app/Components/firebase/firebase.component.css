@@ -1,6 +1,5 @@
 section {
-  width: 30%;
-  margin: 2% 10%;
+  width: 100%;
 }
 
 .customForms {
@@ -41,4 +40,28 @@ input{
 
 .fullWidth {
     width: 100%;
+}
+
+
+table{
+  position: relative;
+  width: 100%;
+  padding: 4px;
+  vertical-align: middle;
+  border: 1px solid black;
+  align-content: center;
+  border-spacing: 2px;
+}
+
+table > tbody > tr > td {
+  background:  rgb(214, 234, 245);
+  border: 1px solid black;
+  padding: 4px 10px;
+}
+
+
+table > thead > tr > th {
+  background: rgb(135, 195, 230);
+  border: 1px solid black;
+  padding: 4px 10px;
 }

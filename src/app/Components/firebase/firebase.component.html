@@ -5,8 +5,8 @@
 
 
 
-<section class="row col-lg-12">
-
+<section class="fullWidth">
+<!-- 
   <form [formGroup]='formGroup' (ngSubmit)="onSubmit()" class="customForms">
     <header class="header">Please fill the below details for our classes.</header>
     <main class="main">
@@ -70,16 +70,32 @@
 
   <div class="alert alert-info" *ngIf='showSuccessMessage'>
     Submitted Successfully
-  </div>
+  </div> -->
 
-  <div>
-    <table style="width: 100%;">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Mobile</th>
+          <th>Location</th>
+          <th>Comment</th>
+          <th>Request Date</th>
+          <th>Batch</th>
+          <th>Payment</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody [@AnimateLeftToRight]='customerArray.length'>
       <tr *ngFor='let customer of customerArray'>
         <td>{{customer.FullName}}</td>
         <td>{{customer.Mobile}}</td>
-        <td>{{customer.Message}}</td>
         <td>{{customer.Location}}</td>
+        <td>{{customer.Message}}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
       </tr>
+    </tbody>
     </table>
-  </div>
 </section>
