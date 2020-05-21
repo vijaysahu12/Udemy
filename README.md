@@ -1,7 +1,7 @@
 ## Angular Version 8
 
 ## Description
-* I have earned one udemy certification on Angular
+* I have earned udemy certification on Angular
 * While going through the udemy videos I have learned so many things like 
   * Routing
   * Animations
