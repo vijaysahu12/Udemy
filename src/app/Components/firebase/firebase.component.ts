@@ -28,7 +28,7 @@ import { AnimateList, AnimateLeftToRight, ScaleAnimation, UpAndDown, SlideBarMen
   ]
 })
 export class FirebaseComponent implements OnInit {
-
+  isOpen = false;
   constructor(private firebase: AngularFireDatabase) { }
   customerList: AngularFireList<any>;
   customerArray = [];
@@ -51,6 +51,8 @@ export class FirebaseComponent implements OnInit {
     //     };
     //   });
     // });
+
+    this.isOpen = true;
   }
 
   GetCustomers() {
@@ -89,8 +91,6 @@ export class FirebaseComponent implements OnInit {
       Location: customer.Location,
       Message: customer.Message
     });
-
-    
   }
 
   onSubmit() {

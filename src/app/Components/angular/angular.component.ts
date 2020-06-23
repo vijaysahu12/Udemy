@@ -37,7 +37,7 @@ export class AngularComponent implements OnInit {
 
   currentTime: Date;
   constructor() { }
-
+  isOpen = false;
   ngOnInit() {
 
     // this.heroForm = new FormGroup({
@@ -49,7 +49,7 @@ export class AngularComponent implements OnInit {
     //   alterEgo: new FormControl(this.hero.alterEgo),
     //   power: new FormControl(this.hero.power, Validators.required)
     // });
-
+    this.isOpen = true;
     this.CurrentTimeValue();
   }
   get name() { return this.heroForm.get('name'); }

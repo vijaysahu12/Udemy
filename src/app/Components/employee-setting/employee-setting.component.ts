@@ -27,10 +27,11 @@ import { trigger, state, transition, animate, style, animateChild } from '@angul
 export class EmployeeSettingComponent implements OnInit {
 
   EmployeeListModel: EmployeeList[] = [];
-
+  isOpen = false;
   constructor() { }
 
   ngOnInit() {
+    this.isOpen = true;
   }
 }
 

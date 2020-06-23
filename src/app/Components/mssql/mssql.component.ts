@@ -24,6 +24,7 @@ import { trigger, state, style, transition, animate, animateChild } from '@angul
 })
 export class MssqlComponent implements OnInit {
 
+  isOpen = false;
   constructor() { }
 
   ngOnInit() {

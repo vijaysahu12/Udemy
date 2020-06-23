@@ -25,8 +25,9 @@ import { trigger, state, style, transition, animate, animateChild } from '@angul
 export class AspcoreComponent implements OnInit {
 
   constructor() { }
-
+  isOpen = false;
   ngOnInit() {
+    this.isOpen = true;
   }
 
 }

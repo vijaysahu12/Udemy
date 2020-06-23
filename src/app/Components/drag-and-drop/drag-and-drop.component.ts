@@ -15,7 +15,7 @@ export class DragAndDropComponent implements OnInit , AfterViewInit {
   lastRow = 0;
   firstCell = 0;
   lastCell = 0;
-
+  isOpen = false;
   @ViewChild('myDiv', {static: false}) divView: ElementRef;
 
   @ViewChild('tableContainer', {static: false}) tableBody: ElementRef;
@@ -43,6 +43,8 @@ export class DragAndDropComponent implements OnInit , AfterViewInit {
 
   }
   ngOnInit() {
+
+    this.isOpen = true;
     this.EmployeeList.push({
       EmpId: 1234,
       Name: 'vijay sahu',

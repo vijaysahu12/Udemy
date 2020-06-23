@@ -29,7 +29,6 @@ import { TableAnimationComponent } from './Components/table-animation/table-anim
 import { UnauthorisedComponent } from './Components/unauthorised/unauthorised.component';
 import { DragAndDropComponent } from './Components/drag-and-drop/drag-and-drop.component';
 import { RetrospectiveComponent } from './Components/retrospective/retrospective.component';
-import { Draggable } from './Directives/draggable.directive';
 import { EventListnerComponent } from './Components/event-listner/event-listner.component';
 import { DatePipe } from '@angular/common';
 import { AngularFireModule } from 'angularfire2';
@@ -70,13 +69,12 @@ import { environment } from 'src/environments/environment';
     BrowserAnimationsModule,
     HttpClientModule,
     NgSelectModule ,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    // AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     ReactiveFormsModule
   ],
   providers: [
     AuthService,
-    Draggable ,
     DatePipe
     // {
     //   provide: HTTP_INTERCEPTORS,

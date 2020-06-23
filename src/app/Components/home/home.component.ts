@@ -91,7 +91,7 @@ export class HomeComponent implements OnInit {
       };
 
    }// constructor end block
-
+   isOpen = false;
   ngOnInit() {
     this.activatedRoute.params.subscribe(param => {
       this.UrlId = param.id;
@@ -102,6 +102,7 @@ export class HomeComponent implements OnInit {
 
     console.log(resultService);
     this.isLoading = false;
+    this.isOpen = true;
   }
 
   setCurrentSelection( option) {
