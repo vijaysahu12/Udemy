@@ -35,120 +35,61 @@ export class DragAndDropComponent implements OnInit, OnDestroy, AfterViewInit {
   ];
   EmployeeList = [];
 
+  randomDate() {
+    const start = new Date();
+    const end = new Date(new Date().setDate(new Date().getDate() + 500));
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime())).getDate();
+  }
+
   ngOnInit() {
 
     this.isOpen = true;
-    this.EmployeeList.push({
-      EmpId: 'Row 0',
-      Name: 'vijay sahu',
-      DayOne: '1000 - 0700',
-      DayTwo: '1000 - 0700',
-      DayThree: '1000 - 0700',
-      DayFour: '1000 - 0700',
-      DayFive: '1000 - 0700',
-      DaySix: '1000 - 0700',
-      DaySeven: '1000 - 0700',
-      DayEight: '1000 - 0700'
-    });
-    this.EmployeeList.push({
-      EmpId: 'Row 1',
-      Name: 'Susmita Sahu',
-      DayOne: '1000 - 0700',
-      DayTwo: '0930 - 0630',
-      DayThree: '1000 - 0700',
-      DayFour: '0930 - 0630',
-      DayFive: '1000 - 0700',
-      DaySix: '0930 - 0630',
-      DaySeven: '1000 - 0700',
-      DayEight: '0930 - 0630'
-    });
-    this.EmployeeList.push({
-      EmpId: 'Row 2',
-      Name: 'Shilpi Verma',
-      DayOne: '1200 - 2100',
-      DayTwo: '0930 - 0630',
-      DayThree: '1000 - 0700',
-      DayFour: '1200 - 2100',
-      DayFive: '1200 - 2100',
-      DaySix: '0930 - 0630',
-      DaySeven: '1000 - 0700',
-      DayEight: '1200 - 2100'
-    });
-    this.EmployeeList.push({
-      EmpId: 'Row 3',
-      Name: 'Shrikuntala Sahu',
-      DayOne: '1300 - 2300',
-      DayTwo: '0930 - 0630',
-      DayThree: '1000 - 0700',
-      DayFour: '1300 - 2300',
-      DayFive: '1200 - 2100',
-      DaySix: '1300 - 2300',
-      DaySeven: '1300 - 2300',
-      DayEight: '1200 - 2100'
-    });
-    this.EmployeeList.push({
-      EmpId: 'Row 4',
-      Name: 'Shubh',
-      DayOne: '1000 - 0700',
-      DayTwo: '0930 - 0630',
-      DayThree: '1000 - 0700',
-      DayFour: '0930 - 0630',
-      DayFive: '1000 - 0700',
-      DaySix: '0930 - 0630',
-      DaySeven: '1000 - 0700',
-      DayEight: '0930 - 0630'
-    });
-    this.EmployeeList.push({
-      EmpId: 'Row 5',
-      Name: 'Sachin Dimri',
-      DayOne: '1200 - 2100',
-      DayTwo: '0930 - 0630',
-      DayThree: '1000 - 0700',
-      DayFour: '1200 - 2100',
-      DayFive: '1200 - 2100',
-      DaySix: '0930 - 0630',
-      DaySeven: '1000 - 0700',
-      DayEight: '1200 - 2100'
-    });
-    this.EmployeeList.push({
-      EmpId: 'Row 6',
-      Name: 'Kamal Negi',
-      DayOne: '1300 - 2300',
-      DayTwo: '0930 - 0630',
-      DayThree: '1000 - 0700',
-      DayFour: '1300 - 2300',
-      DayFive: '1200 - 2100',
-      DaySix: '1300 - 2300',
-      DaySeven: '1300 - 2300',
-      DayEight: '1200 - 2100'
-    });
-
+    for (let i = 0; i < 10; i++) {
+      this.EmployeeList.push({
+        EmpId: 'Row ' + i,
+        Name: 'vijay sahu',
+        DayOne: this.randomDate(),
+        DayTwo: this.randomDate(),
+        DayThree: this.randomDate(),
+        DayFour: this.randomDate(),
+        DayFive: this.randomDate(),
+        DaySix: this.randomDate(),
+        DaySeven: this.randomDate(),
+        DayEight: this.randomDate()
+      });
+    }
     window.addEventListener('mouseup', this.MouseUpEvent, true); // third parameter
   }
 
   ngAfterViewInit() {
-    this.tableBody.nativeElement.addEventListener('mouseover', this.MouseHover , true);
+    this.tableBody.nativeElement.addEventListener('mouseover', this.MouseHover, true);
     this.tableBody.nativeElement.addEventListener('mousedown', this.MouseDownEvent, true);
     // this.divView.nativeElement.innerHTML = 'Hello Angular 8!';
   }
   ngOnDestroy() {
     window.removeEventListener('scroll', this.MouseUpEvent, true);
-    window.addEventListener('mouseover', this.MouseHover , true);
+    window.addEventListener('mouseover', this.MouseHover, true);
     window.addEventListener('mousedown', this.MouseDownEvent, true);
     this.ResetTable();
   }
 
   MouseOutEvent() {
     console.log('MouseOutEvent trigger');
+    
+
   }
 
   MouseUpEvent = (event): void => {
     this.lastRow = 0;
     this.lastCell = 0;
     this.ResetTable();
+    let row1 = localStorage.getItem('row1');
+    let cell1 = (localStorage.getItem('cell1'));
+    let it = this.EmployeeList; //.filter(item => item.indexOf(parseInt(row1, 1)))[parseInt(cell1)];
+    debugger;
   }
 
-  MouseDownEvent(event) {
+  MouseDownEvent = (event): void => {
     if (event.target.classList.contains('cell')) {
       // this.ResetTableCellClass();
       // this.isAnyCellClicked = true;
@@ -171,7 +112,7 @@ export class DragAndDropComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
-  MouseHover  = (event): void => {
+  MouseHover = (event): void => {
     if (localStorage.getItem('isAnyCellClicked') === '1') {
 
 
@@ -207,11 +148,10 @@ export class DragAndDropComponent implements OnInit, OnDestroy, AfterViewInit {
 
   AddColorsOnRowAndTD = (row1, row2, cell1, cell2): void => {
     // if (this.tableBody.nativeElement.rows[this.lastRow]) {}
-
     console.log('(R1:' + row1 + ', R2:' + row2 + ')-(C1:' + cell1 + ', C2:' + cell2 + ')');
     for (let i = row1; i <= row2; i++) {
       const dd = this.tableBody.nativeElement.rows[i] as HTMLTableCellElement;
-      for (let j = cell1 ; j <= cell2; j++) {
+      for (let j = cell1; j <= cell2; j++) {
         dd.children[j].classList.add('clickedClass');
       }
     }
@@ -258,16 +198,16 @@ export class DragAndDropComponent implements OnInit, OnDestroy, AfterViewInit {
     localStorage.setItem('isAnyCellClicked', '0');
 
     const e1 = this.tableBody.nativeElement.querySelectorAll('tbody tr td ').forEach(element => {
-        element.classList.remove('clickedClass');
-        element.firstElementChild.classList.remove('clickedClass');
+      element.classList.remove('clickedClass');
+      element.firstElementChild.classList.remove('clickedClass');
     });
     console.log('------------------------------------------------------------');
   }
 
   ResetAllCellOnly() {
     const e1 = this.tableBody.nativeElement.querySelectorAll('tbody tr td ').forEach(element => {
-        element.classList.remove('clickedClass');
-        element.firstElementChild.classList.remove('clickedClass');
+      element.classList.remove('clickedClass');
+      element.firstElementChild.classList.remove('clickedClass');
     });
     console.log('-----------------ResetAllCellOnly---------------------------');
   }

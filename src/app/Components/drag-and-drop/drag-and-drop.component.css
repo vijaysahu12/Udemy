@@ -4,7 +4,17 @@
   border-radius: 2px 2px;
 }
 
-
+.heading {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 22px;
+  text-shadow: grey;
+  letter-spacing: 1.5;
+  word-spacing: 1.2;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
 .vjTable {
   position: relative;
@@ -76,7 +86,9 @@
 .clickedClass {
   background: #ad6060;
   color: white;
-  transition: 0.3s ease-in-out; 
+  font-weight: bold;
+  transition: 0.3ms ease-in-out; 
+  font-weight: 400;
 }
 
 .cell{
